@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PostModal from "./PostModal";
 
 const Main = () => {
   return (
@@ -91,6 +92,7 @@ const Main = () => {
           </SocialActions>
         </Article>
       </div>
+      <PostModal />
     </Container>
   );
 };
@@ -207,13 +209,17 @@ const SharedActor = styled.div`
       }
     }
   }
-  button {
+  & > button {
     position: absolute;
     right: 12px;
     top: 0;
     background: transparent;
     border: none;
     outline: none;
+    z-index: 100;
+    img {
+      width: 24px;
+    }
   }
 `;
 
@@ -227,7 +233,8 @@ const Description = styled.div`
 
 const SharedImg = styled.div`
   margin-top: 8px;
-  width: 100%auto;
+  width: 100% auto;
+  max-width: 700px;
   display: block;
   position: relative;
   background-color: #f9fafb;
